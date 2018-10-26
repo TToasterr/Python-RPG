@@ -1,2 +1,4 @@
 # Python-RPG
-A Python RPG game, me and my friend are working on.
+A text-based Python RPG game.
+
+This project is me and a friend making a text-based RPG for fun. (And also a grade in computer science)
