@@ -1,10 +1,10 @@
 import sys
-sys.path.append("C:/Users/matth/Documents/GitHub/Everything/Random Testing/Python/RPG/Classes")
-sys.path.append("C:/Users/matth/Documents/GitHub/Everything/Random Testing/Python/RPG/Functions")
+sys.path.append("C:/Users/matth/Documents/GitHub/Python-RPG/classes")
+sys.path.append("C:/Users/matth/Documents/GitHub/Python-RPG/functions")
 
 from random import randint as ri
 from random import choice as ch
-import itemlist
+from itemlist import *
 from newlines import *
 from playerclass import Player
 import inspectitem
@@ -12,20 +12,18 @@ from inspectitem import inspectItem
 from giveitem import giveItem
 from equipping import equipItem
 from printmap import printMap
+from questclass import Quest
 
 #-----------------------------------------------------------------------
 #Making the player
 
 equipped = {
-    "main":itemlist.rusty_sword,
-    "side":"",
-    "armor":itemlist.rusty_armor
+    "main":rusty_sword,
+    "side":blank_item,
+    "armor":rusty_armor
 }
-inv = [itemlist.minor_heal_pot]
-quest = {
-    "goal":"",
-    "item":""
-}
+inv = [minor_heal_pot]
+quest = Quest(0, "", "")
 bigboi()
 name = input("What would you like your players name to be? \n")
 player = Player(name, equipped, inv, 10, False, quest, 0, 0)
@@ -95,9 +93,9 @@ while True:
 
     elif selection == "equip":
         equipItem(player)
-    
-    
-    
+
+
+
     else:
         print("That's not a command!")
         newline()

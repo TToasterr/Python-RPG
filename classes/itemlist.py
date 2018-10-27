@@ -29,6 +29,8 @@ class Item:
             print("+%s to %s" % (self.buffammount, self.bufftype))
 
 
+blank_item = Item("", 0, "", "", "", 0)
+
 minor_heal_pot = Item("Minor Healing Potion", 10, "Potion", "Very Common", "None", 0)
 lesser_heal_pot = Item("Lesser Healing Potion", 20, "Potion", "Common", "None", 0)
 heal_pot = Item("Healing Potion", 50, "Potion", "Uncommon", "None", 0)
