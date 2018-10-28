@@ -13,6 +13,7 @@ from giveitem import giveItem
 from equipping import equipItem
 from printmap import printMap
 from questclass import Quest
+from useitem import useItem
 
 #-----------------------------------------------------------------------
 #Making the player
@@ -48,18 +49,24 @@ while True:
         print("List of Commands:")
         print("stats")
         print("inv")
-        print("equip")
+        print("equip item")
         print("inspect item")
+        print("use item")
         print("move")
         print("toggle minimap")
         print("look around")
-        newlines(2)
+        newline()
 
 
 
     elif selection == "move":
         print("pretend you moved")
         newline()
+
+
+
+    elif selection == "use item":
+        useItem(player)
 
 
 
@@ -91,7 +98,7 @@ while True:
 
 
 
-    elif selection == "equip":
+    elif selection == "equip item":
         equipItem(player)
 
 
