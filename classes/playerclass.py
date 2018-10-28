@@ -34,3 +34,7 @@ class Player:
         print("Inventory: ")
         for item in self.inv:
             item.printName()
+
+    def printStats(self):
+        print("Your health: %s" % self.health)
+        print("Your level: %s" % self.level)

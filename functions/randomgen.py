@@ -10,12 +10,14 @@
 # ─██ ░░ ░░ ░░ ░░ ░░ ██ ─ ██ ░░ ██ ██ ██ ░░ ██ ██ ██ ░░ ██ ─ ██ ░░ ░░ ░░ ░░ ░░ ██ ─
 # ─██ ██ ██ ██ ██ ██ ██ ─ ██ ██ ██ ── ██ ██ ██ ── ██ ██ ██ ─ ██ ██ ██ ██ ██ ██ ██ ─
 # ─── ── ── ── ── ── ── ─ ── ── ── ── ── ── ── ── ── ── ── ─ ── ── ── ── ── ── ── ─
+def ramdomMap():
+    seedmap = [[0 for y in range(5)] for x in range(5)]
+    x = 2
+    y = 2
 
-# seedmap = [[0 for y in range(5)] for x in range(5)]
-# #hold on im gonna run it to test stuff so ima comment all this out real quick
-# x = 3
-# y = 3
-# for i in range(25):
-#     try:
-#
-#k
+    for i in range(25):
+        try:
+            seedmap[x][y] = i+1
+        except:
+            x = 2
+            y = 2

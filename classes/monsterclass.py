@@ -11,3 +11,8 @@ class Monster:
         self.health = ri(5,lvlmax[self.player.level]["monsterhealth"])
         self.level = ri(1,lvlmax[self.player.level]["monsterlevel"])
         self.itemdrop = ch(lvlmax[self.player.level]["items"])
+
+    def printStats(self):
+        print(self.name)
+        print("Health: %s" % self.health)
+        print("Level: %s" % self.level)

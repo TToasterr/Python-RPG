@@ -15,20 +15,25 @@ from printmap import printMap
 from questclass import Quest
 from useitem import useItem
 from monsterclass import Monster
+from fight import fight
 
 #-----------------------------------------------------------------------
 
 lvlmax = [
     {
         "health":20,
+        "playerdamage":5,
         "monsterlevel":2,
         "monsterhealth":15,
+        "monsterdamage":3,
         "items":[minor_heal_pot, minor_heal_pot, minor_heal_pot, lesser_heal_pot, dagger, leather_armor]
     },
     {
         "health":25,
+        "playerdamage":7,
         "monsterlevel":3,
         "monsterhealth":25,
+        "monsterdamage":5,
         "items":[minor_heal_pot, minor_heal_pot, lesser_heal_pot, lesser_heal_pot, dagger, dagger, leather_armor]
     }
 ]
@@ -88,8 +93,8 @@ while True:
     elif selection == "fmove":
         monster = ri(0,1)
         if monster == 1:
-            monster = Monster(player, lvlmax)
-            fight(player, monster)
+            monster = Monster(player, lvlmax, "", "", "", "")
+            fight(player, monster, lvlmax)
 
 
 
