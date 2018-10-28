@@ -9,3 +9,5 @@ def printMap ():
             if Map[x][y] == 0:
                 print("▓▓", end = "")
         print("")
+
+# u here?

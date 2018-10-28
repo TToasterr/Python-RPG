@@ -3,7 +3,7 @@ from convertitem import *
 
 weapons = ["Melee", "Ranged", "Magic"]
 
-def useItem(player):
+def useItem(player, lvlmax):
     bigboi()
     player.printEquipped()
     newline()
@@ -51,7 +51,11 @@ def useItem(player):
                 return()
 
             player.health += item.power
-            print("You healed for %s health." % item.power)
+            if player.health >= lvlmax[player.level]["health"]:
+                player.health = lvlmax[player.level]["health"]
+                print("You healed to full health!")
+            else:
+                print("You healed for %s health." % item.power)
             newline()
 
         else:

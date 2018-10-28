@@ -5,7 +5,7 @@ def equipItem(player):
 	realItem = ""
 	finished = 0
 	owo = 0
-	
+
 	player.printInv()
 	newline()
 	itemName = input("What is the item youd like to equip?\n")

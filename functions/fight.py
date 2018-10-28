@@ -1,0 +1,2 @@
+def fight(player, monster):
+    

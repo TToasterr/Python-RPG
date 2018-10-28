@@ -1,7 +1,8 @@
 from newlines import *
 
 class Quest:
-    def __init__(self, id, goal, item):
+    def __init__(self, questing, id, goal, item):
+        self.questing = questing
         self.id = id
         self.goal = goal
         self.item = item
