@@ -1,5 +1,6 @@
 import itemlist
 
+#This basically just takes an item by name and returns that same item but as a class
 def convertItem(itemName):
     finished = 0
     realItem = ""
