@@ -1,6 +1,7 @@
 from newlines import *
 import itemlist
 
+#Equips an item. P self explanatory xd
 def equipItem(player):
 	realItem = ""
 	finished = 0
