@@ -1,6 +1,8 @@
 from newlines import *
 import itemlist
 
+#Asks if they want to make a custom item. If they do, it gets the name, power, type, rarity, bufftype, and buffammount.
+#If they dont want to create a new item, it asks for an item by id. It then appends the item (custom or not) to the players inventory.
 def giveItem(player):
     found = 0
     corno = input("Do you want to make a custom item? \n")
