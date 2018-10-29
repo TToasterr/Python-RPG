@@ -16,6 +16,8 @@ from questclass import Quest
 from useitem import useItem
 from monsterclass import Monster
 from fight import fight
+from randomgen import makeSeedMap
+from randomgen import printSeedMap
 
 #-----------------------------------------------------------------------
 
@@ -137,6 +139,9 @@ while True:
     elif selection == "equip item":
         equipItem(player)
 
+    elif selection == "seedmap":
+        seedmap = makeSeedMap()
+        printSeedMap()
 
 
     else:
