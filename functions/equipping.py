@@ -6,19 +6,23 @@ def equipItem(player):
 	finished = 0
 	owo = 0
 
+	#Print the inventory and ask what item they want to equip
 	player.printInv()
 	newline()
 	itemName = input("What is the item youd like to equip?\n")
 
+	#Check if the item they input is actually in their inventory
 	for item in player.inv:
 		if item.name == itemName:
 			owo = 1
+	#If it idnt in their inventory, tell them they dont have the item and end the function
 	if owo != 1:
 		bigboi()
 		print("You don't have that item!")
 		newline()
 		return()
 
+	#Check every item in the game to see if the item is real (Sort of useless just because it doesnt matter if its real it only matters if its in their inventory (Hey maybe this is why you cant equip custom items))
 	for itemNum in range(len(itemlist.item_name_array) - 1):
 		if finished == 1:
 			do = "nothing"
@@ -26,6 +30,7 @@ def equipItem(player):
 			finished = 1
 			realItem = itemlist.item_array[itemNum]
 
+	#If the item is armor, replace anything they have in their armor slot with the item from their inventory and then add the item from the armor slot to their inventory
 	if realItem.type == "Armor":
 		tempHolder = player.equipped["armor"]
 		if tempHolder != "":
@@ -35,6 +40,7 @@ def equipItem(player):
 		print("You equipped armor.")
 		newline()
 		return()
+	#If the item is a weapon, ask which slot they want it in and then do the above stuff with that slot to replace the item
 	elif realItem.type in itemlist.weapons:
 		bigboi()
 		player.printEquipped()
@@ -59,6 +65,7 @@ def equipItem(player):
 		print("The item was equipped!")
 		newline()
 		return()
+	#If the item is a potion, tell them they cant equip a potion
 	else:
 		bigboi()
 		print("You can't equip a potion!")
