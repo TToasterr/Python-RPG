@@ -7,7 +7,6 @@ from random import choice as ch
 from itemlist import *
 from newlines import *
 from playerclass import Player
-import inspectitem
 from inspectitem import inspectItem
 from giveitem import giveItem
 from equipping import equipItem
