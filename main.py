@@ -40,6 +40,26 @@ lvlmax = [
         "xp":20,
         "maxxp":40,
         "items":[minor_heal_pot, minor_heal_pot, lesser_heal_pot, lesser_heal_pot, dagger, dagger, leather_armor, blank_item, blank_item]
+    },
+    {
+        "health":30,
+        "playerdamage":10,
+        "monsterlevel":4,
+        "monsterhealth":40,
+        "monsterdamage":7,
+        "xp":30,
+        "maxxp":60,
+        "items":[minor_heal_pot, lesser_heal_pot, lesser_heal_pot, heal_pot, dagger, shortbow, leather_armor, blank_item]
+    },
+    {
+        "health":40,
+        "playerdamage":15,
+        "monsterlevel":5,
+        "monsterhealth":50,
+        "monsterdamage":10,
+        "xp":50,
+        "maxxp":100,
+        "items":[lesser_heal_pot, lesser_heal_pot, heal_pot, heal_pot, shortsword, shortbow, leather_armor]
     }
 ]
 
