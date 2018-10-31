@@ -10,7 +10,7 @@ def giveItem(player):
     if corno == "yes":
         name = input("Whats the item name? \n")
         newline()
-        power = input("Whats the item power? \n")
+        power = int(input("Whats the item power? \n"))
         newline()
         type = input("Whats the item type? \n")
         newline()
@@ -18,7 +18,7 @@ def giveItem(player):
         newline()
         bufftype = input("Whats the item bufftype? \n")
         newline()
-        buffammount = input("Whats the buff amount? \n")
+        buffammount = int(input("Whats the buff amount? \n"))
         bigboi()
         item = itemlist.Item(name, power, type, rarity, bufftype, buffammount)
         player.inv.append(item)

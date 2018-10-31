@@ -5,8 +5,6 @@ weapons = ["Melee", "Ranged", "Magic"]
 
 def useItem(player, lvlmax):
     bigboi()
-    player.printEquipped()
-    newline()
     player.printInv()
     newline()
     which = input("What item do you want to use? \n")

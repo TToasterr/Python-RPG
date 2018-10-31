@@ -2,6 +2,7 @@ from random import randint as ri
 from random import choice as ch
 from newlines import *
 from useitem import useItem
+from itemlist import blank_item
 import sys
 
 def fight(player, monster, lvlmax):
@@ -13,12 +14,18 @@ def fight(player, monster, lvlmax):
     inp = input("What would you like to do? \n")
     bigboi()
 
-    #If they choose attack, choose a random number between their min damage (0) and their max (their main power) <-- ADD BUFFS INTO ACCOUNT
+    #If they choose attack, choose a random number between their min damage (0) and their max (their main power)
     #and subtract it from the monsters health. If the monster is dead (at or below 0 health) then end the function and
     #say they won. If its not, get random damage between 0 and the monsters maximum (depending on the level of the player)
     #and subtract it from the players health. If the player is dead, end the program. If they arent dead, restart the function.
     if inp == "attack":
-        mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
+        if player.equipped["armor"] != blank_item:
+            if player.equipped["armor"].bufftype == player.equipped["main"].type:
+                mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power + player.equipped["armor"].buffammount
+            else:
+                mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
+        else:
+            mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
         pdmg = ri(0,mpdmg)
         monster.health -= pdmg
 
@@ -26,7 +33,16 @@ def fight(player, monster, lvlmax):
         newline()
 
         if monster.health <= 0:
+            #pick random item from lvlmax
+            #pick random number of xp from lvlmax
+            item = ch(lvlmax[player.level]["items"])
+            xpgain = ri(0,lvlmax[player.level]["xp"])
+            player.xp += xpgain
             print("You won!")
+            if item != blank_item:
+                print("You got a(n) %s from the monster!" % item.name)
+                player.inv.append(item)
+            print("You got %s xp." % xpgain)
             newline()
             return()
 

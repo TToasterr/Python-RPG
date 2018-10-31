@@ -13,9 +13,11 @@ def equipItem(player):
 	itemName = input("What is the item youd like to equip?\n")
 
 	#Check if the item they input is actually in their inventory
-	for item in player.inv:
-		if item.name == itemName:
+	for itemNum in range(len(player.inv)):
+		if player.inv[itemNum].name == itemName:
 			owo = 1
+			realItem = player.inv[itemNum]
+			player.inv.pop(itemNum)
 	#If it idnt in their inventory, tell them they dont have the item and end the function
 	if owo != 1:
 		bigboi()
@@ -24,12 +26,12 @@ def equipItem(player):
 		return()
 
 	#Check every item in the game to see if the item is real (Sort of useless just because it doesnt matter if its real it only matters if its in their inventory (Hey maybe this is why you cant equip custom items))
-	for itemNum in range(len(itemlist.item_name_array) - 1):
-		if finished == 1:
-			do = "nothing"
-		elif itemName == itemlist.item_array[itemNum].name:
-			finished = 1
-			realItem = itemlist.item_array[itemNum]
+	# for itemNum in range(len(itemlist.item_name_array) - 1):
+	# 	if finished == 1:
+	# 		do = "nothing"
+	# 	elif itemName == itemlist.item_array[itemNum].name:
+	# 		finished = 1
+	# 		realItem = itemlist.item_array[itemNum]
 
 	#If the item is armor, replace anything they have in their armor slot with the item from their inventory and then add the item from the armor slot to their inventory
 	if realItem.type == "Armor":

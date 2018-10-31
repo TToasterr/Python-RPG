@@ -27,7 +27,9 @@ lvlmax = [
         "monsterlevel":2,
         "monsterhealth":15,
         "monsterdamage":3,
-        "items":[minor_heal_pot, minor_heal_pot, minor_heal_pot, lesser_heal_pot, dagger, leather_armor]
+        "xp":10,
+        "maxxp":20,
+        "items":[minor_heal_pot, minor_heal_pot, minor_heal_pot, lesser_heal_pot, dagger, leather_armor, blank_item, blank_item, blank_item]
     },
     {
         "health":25,
@@ -35,7 +37,9 @@ lvlmax = [
         "monsterlevel":3,
         "monsterhealth":25,
         "monsterdamage":5,
-        "items":[minor_heal_pot, minor_heal_pot, lesser_heal_pot, lesser_heal_pot, dagger, dagger, leather_armor]
+        "xp":20,
+        "maxxp":40,
+        "items":[minor_heal_pot, minor_heal_pot, lesser_heal_pot, lesser_heal_pot, dagger, dagger, leather_armor, blank_item, blank_item]
     }
 ]
 
@@ -51,13 +55,17 @@ inv = [minor_heal_pot]
 quest = Quest(False, 0, "", "")
 bigboi()
 name = input("What would you like your players name to be? \n")
-player = Player(name, equipped, inv, 10, 1, quest, 0, 0)
+player = Player(name, equipped, inv, 10, 0, 0, quest, 0, 0)
 
 #-----------------------------------------------------------------------
 #The main loop
-minimap = 1
+minimap = 0
 bigboi()
 while True:
+    if player.xp >= lvlmax[player.level]["maxxp"]:
+        player.xp = 0
+        player.level += 1
+
     selection = input ("What would you like to do? \n")
     bigboi()
 

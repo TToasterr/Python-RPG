@@ -2,7 +2,7 @@ from random import randint as ri
 from random import choice as ch
 from newlines import *
 
-names = ["orc", "goblin", "skeleton", "zombie", "crazed miner", "crazed minor", "millenial"]
+names = ["Orc", "Goblin", "Skeleton", "Zombie", "Crazed Miner", "Crazed Minor", "Millenial"]
 
 class Monster:
     def __init__(self, player, lvlmax, name, health, level, itemdrop):

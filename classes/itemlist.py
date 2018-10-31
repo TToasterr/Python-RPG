@@ -18,9 +18,9 @@ class Item:
 
         if self.type in weapons:
             print("%s damage" % self.power)
-        elif self.type == "armor":
+        elif self.type == "Armor":
             print("%s defense" % self.power)
-        else:
+        elif self.type == "Potion":
             print("%s health regen" % self.power)
 
         print(self.rarity)
@@ -29,7 +29,6 @@ class Item:
             print("+%s to %s" % (self.buffammount, self.bufftype))
 
 
-blank_item = Item("", 0, "", "", "", 0)
 
 minor_heal_pot = Item("Minor Healing Potion", 10, "Potion", "Very Common", "None", 0)
 lesser_heal_pot = Item("Lesser Healing Potion", 20, "Potion", "Common", "None", 0)
@@ -45,6 +44,8 @@ leather_armor = Item("Leather Armor", 4, "Armor", "Very Common", "None", 0)
 
 shortbow = Item("Short Bow", 3, "Ranged", "Common", "None", 0)
 shortsword = Item("Shortsword", 5, "Melee", "Common", "None", 0)
+
+blank_item = Item("", 0, "", "", "", 0)
 
 item_array = [
     minor_heal_pot,
