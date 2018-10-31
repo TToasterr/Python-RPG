@@ -46,7 +46,9 @@ def fight(player, monster, lvlmax):
             newline()
             return()
 
-        mdmg = 1 + ri(0,lvlmax[player.level]["monsterdamage"])
+        mdmg = (1 + ri(0,lvlmax[player.level]["monsterdamage"])) - (ri(0,player.equipped["armor"].power))
+        if mdmg < 0:
+            mdmg = 0
         player.health -= mdmg
 
         print("You took %s damage from the monster." % mdmg)
