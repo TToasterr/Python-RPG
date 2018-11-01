@@ -60,6 +60,16 @@ lvlmax = [
         "xp":50,
         "maxxp":100,
         "items":[lesser_heal_pot, lesser_heal_pot, heal_pot, heal_pot, shortsword, shortbow, leather_armor]
+    },
+    {
+        "health":50,
+        "playerdamage":20,
+        "monsterlevel":6,
+        "monsterhealth":60,
+        "monsterdamage":15,
+        "xp":75,
+        "maxxp":150,
+        "items":[lesser_heal_pot, heal_pot, heal_pot, greater_heal_pot, shortsword, shortsword, shortbow, shortbow, iron_sword, bow, leather_armor, leather_armor]
     }
 ]
 

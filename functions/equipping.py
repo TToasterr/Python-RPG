@@ -17,7 +17,7 @@ def equipItem(player):
 		if player.inv[itemNum].name == itemName:
 			owo = 1
 			realItem = player.inv[itemNum]
-			player.inv.pop(itemNum)
+			ITEMNUMBER = itemNum
 	#If it idnt in their inventory, tell them they dont have the item and end the function
 	if owo != 1:
 		bigboi()
@@ -42,6 +42,7 @@ def equipItem(player):
 		bigboi()
 		print("You equipped armor.")
 		newline()
+		player.inv.pop(itemNum)
 		return()
 	#If the item is a weapon, ask which slot they want it in and then do the above stuff with that slot to replace the item
 	elif realItem.type in itemlist.weapons:
@@ -50,11 +51,21 @@ def equipItem(player):
 		newline()
 		whichSlot = input("Which slot would you like to put this in? (Main or Side)\n")
 		if whichSlot == "Main":
+			if realItem.type == "Ranged":
+				bigboi()
+				print("You cannot equip a ranged item in your main slot!")
+				newline()
+				return()
 			tempHolder = player.equipped["main"]
 			if tempHolder != "":
 				player.inv.append(tempHolder)
 			player.equipped["main"] = realItem
 		elif whichSlot == "Side":
+			if realItem.type != "Ranged":
+				bigboi()
+				print("You cannot equip a non-ranged item in your secondary slot!")
+				newline()
+				return()
 			tempHolder = player.equipped["side"]
 			if tempHolder != "":
 				player.inv.append(tempHolder)
@@ -67,6 +78,7 @@ def equipItem(player):
 		bigboi()
 		print("The item was equipped!")
 		newline()
+		player.inv.pop(itemNum)
 		return()
 	#If the item is a potion, tell them they cant equip a potion
 	else:

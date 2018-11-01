@@ -45,6 +45,9 @@ leather_armor = Item("Leather Armor", 4, "Armor", "Very Common", "None", 0)
 shortbow = Item("Short Bow", 3, "Ranged", "Common", "None", 0)
 shortsword = Item("Shortsword", 5, "Melee", "Common", "None", 0)
 
+iron_sword = Item("Iron Sword", 10, "Melee", "Uncommon", "None", 0)
+bow = Item("Bow", 7, "Ranged", "Uncommon", "None", 0)
+
 blank_item = Item("", 0, "", "", "", 0)
 
 item_array = [
@@ -58,7 +61,9 @@ item_array = [
     dagger,
     leather_armor,
     shortbow,
-    shortsword
+    shortsword,
+    iron_sword,
+    bow
 ]
 item_name_array = [
     "minor_heal_pot",
@@ -71,5 +76,7 @@ item_name_array = [
     "dagger",
     "leather_armor",
     "shortbow",
-    "shortsword"
+    "shortsword",
+    "iron_sword",
+    "bow"
 ]

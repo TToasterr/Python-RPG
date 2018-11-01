@@ -5,7 +5,10 @@ from useitem import useItem
 from itemlist import blank_item
 import sys
 
+lastTurn = ""
+
 def fight(player, monster, lvlmax):
+    global lastTurn
     #Print the player stats and monster stats, then ask what they'd like to do
     player.printStats()
     newline()
@@ -14,18 +17,36 @@ def fight(player, monster, lvlmax):
     inp = input("What would you like to do? \n")
     bigboi()
 
+    side = False
+
     #If they choose attack, choose a random number between their min damage (0) and their max (their main power)
     #and subtract it from the monsters health. If the monster is dead (at or below 0 health) then end the function and
     #say they won. If its not, get random damage between 0 and the monsters maximum (depending on the level of the player)
     #and subtract it from the players health. If the player is dead, end the program. If they arent dead, restart the function.
     if inp == "attack":
-        if player.equipped["armor"] != blank_item:
-            if player.equipped["armor"].bufftype == player.equipped["main"].type:
-                mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power + player.equipped["armor"].buffammount
+        if player.equipped["side"] == blank_item:
+            mainOrSide = "main"
+        elif lastTurn != "side":
+            mainOrSide = input("Would you like to use your main or your side? \n")
+        else:
+            mainOrSide = "main"
+        bigboi()
+
+        if mainOrSide in {"main", "Main"}:
+            if player.equipped["armor"] != blank_item:
+                if player.equipped["armor"].bufftype == player.equipped["main"].type:
+                    mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power + player.equipped["armor"].buffammount
+                else:
+                    mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
             else:
                 mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
-        else:
-            mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["main"].power
+            lastTurn = "main"
+            side = False
+
+        if mainOrSide in {"side", "Side"}:
+            mpdmg = lvlmax[player.level]["playerdamage"] + player.equipped["side"].power
+            side = True
+            lastTurn = "side"
         pdmg = ri(0,mpdmg)
         monster.health -= pdmg
 
@@ -46,23 +67,28 @@ def fight(player, monster, lvlmax):
             newline()
             return()
 
-        mdmg = (1 + ri(0,lvlmax[player.level]["monsterdamage"])) - (ri(0,player.equipped["armor"].power))
-        if mdmg < 0:
-            mdmg = 0
-        player.health -= mdmg
+        if not side:
+            mdmg = (1 + ri(0,lvlmax[player.level]["monsterdamage"])) - (ri(0,player.equipped["armor"].power))
+            if mdmg < 0:
+                mdmg = 0
+            player.health -= mdmg
 
-        print("You took %s damage from the monster." % mdmg)
+            print("You took %s damage from the monster." % mdmg)
 
-        if player.health <= 0:
-            print("You lost!")
-            newline()
-            sys.exit()
+            if player.health <= 0:
+                print("You lost!")
+                newline()
+                sys.exit()
+        else:
+            print("You used a ranged weapon, so you didn't take any monster damage.")
 
     #If they choose to use an item, then use the item (I just stole the code from the use item script xd)
     #Issue - It prints their equipped too
     elif inp == "use item":
         useItem(player, lvlmax)
-        mdmg = 1 + ri(0,lvlmax[player.level]["monsterdamage"])
+        mdmg = (1 + ri(0,lvlmax[player.level]["monsterdamage"])) - (ri(0,player.equipped["armor"].power))
+        if mdmg < 0:
+            mdmg = 0
         player.health -= mdmg
 
         print("You took %s damage from the monster." % mdmg)
