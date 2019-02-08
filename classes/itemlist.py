@@ -37,16 +37,18 @@ greater_heal_pot = Item("Greater Healing Potion", 100, "Potion", "Rare", "None",
 massive_heal_pot = Item("Massive Healing Potion", 200, "Potion", "Legendary", "None", 0)
 
 rusty_sword = Item("Rusty Sword", 2, "Melee", "Starter", "None", 0)
-rusty_armor = Item("Rusty Armor", 3, "Armor", "Starter", "None", 0)
-
 dagger = Item("Dagger", 4, "Melee", "Very Common", "None", 0)
-leather_armor = Item("Leather Armor", 4, "Armor", "Very Common", "None", 0)
+shortsword = Item("Shortsword", 5, "Melee", "Common", "None", 0)
+iron_sword = Item("Iron Sword", 10, "Melee", "Uncommon", "None", 0)
+greatsword = Item("Greatsword", 16, "Melee", "Rare", "None", 0)
 
 shortbow = Item("Short Bow", 3, "Ranged", "Common", "None", 0)
-shortsword = Item("Shortsword", 5, "Melee", "Common", "None", 0)
-
-iron_sword = Item("Iron Sword", 10, "Melee", "Uncommon", "None", 0)
 bow = Item("Bow", 7, "Ranged", "Uncommon", "None", 0)
+
+rusty_armor = Item("Rusty Armor", 3, "Armor", "Starter", "None", 0)
+leather_armor = Item("Leather Armor", 4, "Armor", "Very Common", "None", 0)
+iron_armor = Item("Iron Armor", 6, "Armor", "Common", "None", 0)
+chainmail_armor = Item("Chainmail Armor", 9, "Armor", "Uncommon", "None", 0)
 
 blank_item = Item("", 0, "", "", "", 0)
 

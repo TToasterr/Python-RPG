@@ -70,6 +70,26 @@ lvlmax = [
         "xp":75,
         "maxxp":150,
         "items":[lesser_heal_pot, heal_pot, heal_pot, greater_heal_pot, shortsword, shortsword, shortbow, shortbow, iron_sword, bow, leather_armor, leather_armor]
+    },
+    {
+        "health":75,
+        "playerdamage":30,
+        "monsterlevel":7,
+        "monsterhealth":100,
+        "monsterdamage":25,
+        "xp":100,
+        "maxxp":250,
+        "items":[heal_pot, heal_pot, greater_heal_pot, greater_heal_pot, shortsword, iron_sword, shortbow, bow, iron_sword, bow, iron_armor, iron_armor, leather_armor, iron_sword]
+    },
+    {
+        "health":100,
+        "playerdamage":50,
+        "monsterlevel":10,
+        "monsterhealth":150,
+        "monsterdamage":50,
+        "xp":150,
+        "maxxp":500,
+        "items":[greater_heal_pot, greater_heal_pot, massive_heal_pot, massive_heal_pot, iron_sword, iron_sword, bow, bow, greatsword, bow, iron_armor, chainmail_armor, chainmail_armor, greatsword]
     }
 ]
 
